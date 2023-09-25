@@ -1,0 +1,37 @@
+{
+  "name": "example-kafkajs",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "dotenv -e .env.development -- tsx watch src/main.ts",
+    "prebuild": "rimraf dist",
+    "build": "tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json",
+    "start": "node dist/main.js",
+    "lint": "eslint . --config eslintrc.cjs",
+    "migrate": "dotenv -e .env.development -- prisma db push"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "@prisma/client": "^5.3.1",
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
+    "prisma": "^5.3.1",
+    "rimraf": "^5.0.1",
+    "tsc-alias": "^1.8.8",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2"
+  },
+  "prisma": {
+    "schema": "src/database/schema.prisma"
+  },
+  "license": "UNLICENSED"
+}
